@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: var(--placeholder-color);
+  font-weight: var(--placeholder-font-weight);
+}
+
+html {
+  /* http://pxtoem.com/ */
+  /* font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+    Arial, sans-serif; */
+  font-family: inherit;
+  /*  16px */
+  font-size: 100%;
+
+  /*  15px */
+  /* font-size: 93.8%;  */
+
+  /*  14px */
+  /* font-size: 87.5%; */
+
+  /*  12px */
+  /*  font-size: 75%;*/
+
+  /*  10px */
+  /*  font-size: 62.5%;*/
+
+  /* color theme */
+  --base-color: #111111;
+  --primary-color: #275efe;
+  --primary-button-color: #275efe;
+  --background-color: #f7fbff;
+  --error-color: #EE0000;
+  --input-border-color: #BBC1E1;
+  --placeholder-color: #AAAAAA;
+  --placeholder-font-weight: 300;
+  --success-color: #15cb6e;
+  --warning-color: #f9b801;
+  --error-color: #e7142b;
+  --secondary-color: #5a4fff;
+}
+
+.full-width { width: 100%; }
+.full-height { height: 100%; }
+.box-size { box-sizing: border-box; }

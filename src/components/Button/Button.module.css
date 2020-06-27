@@ -1,0 +1,239 @@
+.swee-button {
+  display: inline-block;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+  font-size: 100%;
+  font-family: inherit;
+  padding: 0.5em 1.5em;
+  margin-right: 0.5em;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  box-shadow: inset 0 1px 0px rgba(255, 255, 255, 0.1);
+  background-color: #e6e6e6;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Rounded Button */
+.swee-button.swee-button-rounded {
+  border-radius: 2em;
+}
+
+/* Ghost Button */
+.swee-button.button-light {
+  background: transparent;
+  border: transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) inset,
+    0 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.swee-button.button-light:hover {
+  background: transparent;
+  border: transparent;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset,
+    0 0 10px rgba(0, 0, 0, 0.1) inset;
+}
+
+/* Link Button */
+.swee-button.button-link {
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+  color: var(--link-color);
+  padding: 0.5em 1.5em;
+  margin-right: 0.5em;
+}
+
+.swee-button.button-link:hover, 
+.swee-button.button-link:focus, 
+.swee-button.button-link:active {
+  background: transparent;
+  border: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+  color: var(--link-hover-color);
+}
+
+/* Ghost Button */
+.swee-button.button-ghost {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  margin-right: 0;
+}
+
+.swee-button[disabled],
+.button-disabled,
+.button-disabled:hover,
+.button-disabled:focus,
+.button-disabled:active {
+  border: none;
+  background-image: none;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  filter: alpha(opacity=40);
+  -khtml-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.swee-button.button-primary {
+  color: #fff;
+  background-color: var(--primary-button-color);
+  border-color: var(--primary-button-color);
+}
+
+.swee-button.button-success {
+  color: #fff;
+  background: var(--success-color);
+  border-color: var(--success-color);
+}
+
+.swee-button.button-error {
+  color: #fff;
+  background: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.swee-button.button-warning {
+  color: #fff;
+  background: var(--warning-color);
+  border-color: var(--warning-color);
+}
+
+.swee-button.button-secondary {
+  color: #fff;
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.swee-button:hover,
+.swee-button:focus {
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000',endColorstr='#1a000000',GradientType=0);
+  background-image: -webkit-gradient(
+    linear,
+    0 0,
+    0 100%,
+    from(transparent),
+    color-stop(50%, rgba(0, 0, 0, 0.05)),
+    to(rgba(0, 0, 0, 0.05))
+  );
+  background-image: -webkit-linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: -moz-linear-gradient(
+    top,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: -o-linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  background-image: linear-gradient(
+    transparent,
+    rgba(0, 0, 0, 0.05) 50%,
+    rgba(0, 0, 0, 0.05)
+  );
+  outline: 0;
+}
+
+.swee-button:active,
+.swee-button.button-active {
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05) inset,
+    0 0 10px rgba(0, 0, 0, 0.05) inset;
+}
+
+.swee-button.loading,
+.swee-button.loading:hover,
+.swee-button.loading:active,
+.swee-button-rounded.loading {
+  background-color: #ffffff;
+  background-image: none;
+  color: #ffffff;
+  box-shadow: none;
+  position: relative;
+  cursor: wait;
+}
+
+.swee-button.loading:before,
+.swee-button-rounded.loading:before {
+  margin: -10px 0 0 -10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  content: "";
+  -webkit-border-radius: 20px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 20px;
+  -moz-background-clip: padding;
+  border-radius: 20px;
+  background-clip: padding-box;
+  border: rgba(0, 0, 0, 0.1) 2px solid;
+  border-top-color: #333;
+  -webkit-animation: animation-rotate 750ms linear infinite;
+  -moz-animation: animation-rotate 750ms linear infinite;
+  -o-animation: animation-rotate 750ms linear infinite;
+  animation: animation-rotate 750ms linear infinite;
+}
+
+.swee-button-link:hover,
+.swee-button-link:active,
+.swee-button-link:focus {
+  background: none;
+  color: var(--linkHover);
+  text-decoration: underline;
+}
+
+.swee-button.button-primary.loading:before {
+  border-top-color: var(--primary-color);
+}
+.swee-button.button-success.loading:before {
+  border-top-color: var(--success-color);
+}
+.swee-button.button-error.loading:before {
+  border-top-color: var(--error-color);
+}
+.swee-button.button-warning.loading:before {
+  border-top-color: var(--warning-color);
+}
+.swee-button.button-secondary.loading:before {
+  border-top-color: var(--secondary-color);
+}
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}

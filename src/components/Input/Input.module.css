@@ -1,0 +1,340 @@
+.Input {
+  font-size: 100%;
+  color: #000000;
+}
+
+.Input[type="text"],
+.Input[type="password"],
+.Input[type="email"],
+.Input[type="url"],
+.Input[type="date"],
+.Input[type="month"],
+.Input[type="time"],
+.Input[type="datetime"],
+.Input[type="datetime-local"],
+.Input[type="week"],
+.Input[type="number"],
+.Input[type="search"],
+.Input[type="tel"],
+.Input[type="color"],
+textarea.Input {
+  padding: 0.5em 0.6em;
+  display: inline-block;
+  border: 1px solid var(--input-border-color);
+  box-shadow: inset 0 1px 3px #eee;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.Input[type="text"],
+.Input[type="password"],
+.Input[type="email"],
+.Input[type="url"],
+textarea.Input {
+  width: 300px;
+}
+
+.Input[type="text"]:focus,
+.Input[type="password"]:focus,
+.Input[type="email"]:focus,
+.Input[type="url"]:focus,
+.Input[type="date"]:focus,
+.Input[type="month"]:focus,
+.Input[type="time"]:focus,
+.Input[type="datetime"]:focus,
+.Input[type="datetime-local"]:focus,
+.Input[type="week"]:focus,
+.Input[type="number"]:focus,
+.Input[type="search"]:focus,
+.Input[type="tel"]:focus,
+.Input[type="color"]:focus,
+textarea.Input:focus {
+  outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color-shadow);
+  -webkit-box-shadow: 0 0 3px 1px var(--primary-color-shadow);
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.Input:not([type]):focus {
+  outline: 0;
+  outline: thin dotted \9; /* IE6-9 */
+  border-color: var(--primary-color);
+}
+
+.Input.sui-form-checkbox,
+.Input.sui-form-radio {
+  margin: 0.5em 0;
+  display: block;
+}
+
+.Input[type="text"][disabled],
+.Input[type="password"][disabled],
+.Input[type="email"][disabled],
+.Input[type="url"][disabled],
+.Input[type="date"][disabled],
+.Input[type="month"][disabled],
+.Input[type="time"][disabled],
+.Input[type="datetime"][disabled],
+.Input[type="datetime-local"][disabled],
+.Input[type="week"][disabled],
+.Input[type="number"][disabled],
+.Input[type="search"][disabled],
+.Input[type="tel"][disabled],
+.Input[type="color"][disabled],
+textarea.Input[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+
+/*
+Need to separate out the :not() selector from the rest of the CSS 2.1 selectors
+since IE8 won't execute CSS that contains a CSS3 selector.
+*/
+.Input:not([type])[disabled] {
+  cursor: not-allowed;
+  background-color: #eaeded;
+  color: #cad2d3;
+}
+.Input[readonly],
+textarea.Input[readonly] {
+  background: #eee; /* menu hover bg color */
+  color: #777; /* menu text color */
+  border-color: #ccc;
+}
+
+.Input:global.invalid,
+textarea.Input:global.invalid,
+.Input:focus:global.invalid,
+textarea.Input:focus:global.invalid {
+  color: #ee5f5b;
+  border-color: #ee5f5b;
+}
+
+.Input:focus:invalid,
+textarea:focus:invalid {
+  color: #b94a48;
+  border-color: #ee5f5b;
+}
+
+input:focus:invalid:focus,
+textarea:focus:invalid:focus {
+  border-color: #e9322d;
+}
+.Input[type="file"]:focus:invalid:focus,
+.Input[type="radio"]:focus:invalid:focus,
+.Input[type="checkbox"]:focus:invalid:focus {
+  outline-color: #e9322d;
+}
+
+label.Input {
+  margin: 0.5em 0 0.2em;
+}
+legend.Input {
+  display: block;
+  width: 100%;
+  padding: 0.3em 0;
+  margin-bottom: 0.3em;
+  color: #333;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.Input[type="checkbox"],
+.Input[type="radio"] {
+  --active: var(--primary-color);
+  --active-inner: #fff;
+  --focus: 2px rgba(39, 94, 254, 0.3);
+  --border: var(--input-border-color);
+  --border-hover: var(--primary-color);
+  --background: #fff;
+  --disabled: #f6f8ff;
+  --disabled-inner: #e1e6f9;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 21px;
+  outline: none;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+  border: 1px solid var(--bc, var(--border));
+  background: var(--b, var(--background));
+  -webkit-transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+}
+.Input[type="checkbox"]:after,
+.Input[type="radio"]:after {
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  position: absolute;
+  -webkit-transition: opacity var(--d-o, 0.2s),
+    -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+  transition: opacity var(--d-o, 0.2s),
+    -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+    opacity var(--d-o, 0.2s);
+  transition: transform var(--d-t, 0.3s) var(--d-t-e, ease),
+    opacity var(--d-o, 0.2s),
+    -webkit-transform var(--d-t, 0.3s) var(--d-t-e, ease);
+}
+.Input[type="checkbox"]:checked,
+.Input[type="radio"]:checked {
+  --b: var(--active);
+  --bc: var(--active);
+  --d-o: 0.3s;
+  --d-t: 0.6s;
+  --d-t-e: cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+.Input[type="checkbox"]:disabled,
+.Input[type="radio"]:disabled {
+  --b: var(--disabled);
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+.Input[type="checkbox"]:disabled:checked,
+.Input[type="radio"]:disabled:checked {
+  --b: var(--disabled-inner);
+  --bc: var(--border);
+}
+.Input[type="checkbox"]:disabled + label,
+.Input[type="radio"]:disabled + label {
+  cursor: not-allowed;
+}
+.Input[type="checkbox"]:hover:not(:checked):not(:disabled),
+.Input[type="radio"]:hover:not(:checked):not(:disabled) {
+  --bc: var(--border-hover);
+}
+.Input[type="checkbox"]:focus,
+.Input[type="radio"]:focus {
+  box-shadow: 0 0 0 var(--focus);
+}
+.Input[type="checkbox"]:not(.switch),
+.Input[type="radio"]:not(.switch) {
+  width: 21px;
+}
+.Input[type="checkbox"]:not(.switch):after,
+.Input[type="radio"]:not(.switch):after {
+  opacity: var(--o, 0);
+}
+.Input[type="checkbox"]:not(.switch):checked,
+.Input[type="radio"]:not(.switch):checked {
+  --o: 1;
+}
+.Input[type="checkbox"] + label,
+.Input[type="radio"] + label {
+  display: inline-block;
+  cursor: pointer;
+  margin: 2px 0 0 4px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.Input[type="checkbox"]:not(.switch) {
+  border-radius: 5px;
+}
+.Input[type="checkbox"]:not(.switch):after {
+  width: 5px;
+  height: 9px;
+  border: 2px solid var(--active-inner);
+  border-top: 0;
+  border-left: 0;
+  left: 6px;
+  top: 4px;
+  -webkit-transform: rotate(var(--r, 20deg));
+  transform: rotate(var(--r, 20deg));
+}
+.Input[type="checkbox"]:not(.switch):checked {
+  --r: 43deg;
+}
+.Input.switch {
+  width: 38px;
+  border-radius: 11px;
+}
+.Input.switch:after {
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--ab, var(--border));
+  -webkit-transform: translateX(var(--x, 0));
+  transform: translateX(var(--x, 0));
+}
+.Input.switch:checked {
+  --ab: var(--active-inner);
+  --x: 17px;
+}
+.Input.switch:disabled:not(:checked):after {
+  opacity: 0.6;
+}
+
+.Input[type="radio"] {
+  border-radius: 50%;
+}
+.Input[type="radio"]:after {
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: var(--active-inner);
+  opacity: 0;
+  -webkit-transform: scale(var(--s, 0.7));
+  transform: scale(var(--s, 0.7));
+}
+.Input[type="radio"]:checked {
+  --s: 0.5;
+}
+
+.Input:global.sui-input-error {
+  border-color: var(--error-color) !important;
+}
+
+.Input:read-only {
+  cursor: not-allowed;
+}
+
+@media only screen and (max-width: 568px) {
+  button.Input[type="submit"] {
+    margin: 0.7em 0 0;
+  }
+
+  .Input:not([type]),
+  .Input[type="text"],
+  .Input[type="password"],
+  .Input[type="email"],
+  .Input[type="url"],
+  .Input[type="date"],
+  .Input[type="month"],
+  .Input[type="time"],
+  .Input[type="datetime"],
+  .Input[type="datetime-local"],
+  .Input[type="week"],
+  .Input[type="number"],
+  .Input[type="search"],
+  .Input[type="tel"],
+  .Input[type="color"],
+  label.Input {
+    margin-bottom: 0.3em;
+    display: block;
+  }
+
+  .Input[type="text"],
+  .Input[type="password"],
+  .Input[type="email"],
+  .Input[type="url"],
+  textarea.Input {
+    width: 100%;
+  }
+}
