@@ -5,6 +5,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 module.exports = {
   mode: 'production',
   output: {
+    globalObject: 'this',
     filename: '[name].js',
     chunkFilename: '[name].js',
     libraryTarget: 'umd',
